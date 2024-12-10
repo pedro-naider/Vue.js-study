@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="app">
+    <p v-once>{{ titulo }}</p>
+    <p c3r-bind="abc">{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a>
+    <p v-html="linkHtml"></p>
+    <!-- <a v-bind:href="linkHtmll">google2</a> -->
+</div>
+
+<script>
+ new Vue({
+    el:'#app',
+    data: {
+        titulo: 'Usando Vuejs"',
+        link: 'http://google.com.br',
+        linkHtml: '<a href="//google.com">Google</a>',
+        // linkHtmll: 'http://google.com'
+
+    },
+    methods: {
+        saudacao: function() {
+             this.titulo = 'Bom dia!!!' 
+            return this.titulo
+        }
+    } 
+ })
+
+
+</script>
